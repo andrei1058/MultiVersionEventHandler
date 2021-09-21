@@ -1,6 +1,6 @@
 package com.andrei1058.multiversioneventhandler;
 
-import com.andrei1058.spigot.multiversioneventhandler.WrappedPickUpEvent;
+import com.andrei1058.spigot.multiversioneventhandler.WrappedEntityPickUpEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -11,10 +11,10 @@ import org.jetbrains.annotations.NotNull;
 
 public class EntityPickUp_1_12n_Above implements Listener {
 
-    protected WrappedPickUpEvent wrappedPickUpEvent;
+    protected WrappedEntityPickUpEvent wrappedEntityPickUpEvent;
 
-    public EntityPickUp_1_12n_Above(WrappedPickUpEvent wrappedPickUpEvent, EventPriority eventPriority, Plugin plugin) {
-        this.wrappedPickUpEvent = wrappedPickUpEvent;
+    public EntityPickUp_1_12n_Above(WrappedEntityPickUpEvent wrappedPickUpEvent, EventPriority eventPriority, Plugin plugin) {
+        this.wrappedEntityPickUpEvent = wrappedPickUpEvent;
         Listener event;
         switch (eventPriority) {
             case LOWEST:
@@ -88,7 +88,7 @@ public class EntityPickUp_1_12n_Above implements Listener {
     }
 
     private void handleEvent(@NotNull EntityPickupItemEvent event) {
-        boolean cancel = EntityPickUp_1_12n_Above.this.wrappedPickUpEvent.onEntityPickUpItemStack(event.getEntity(), event.getItem(), event.getRemaining());
+        boolean cancel = EntityPickUp_1_12n_Above.this.wrappedEntityPickUpEvent.onEntityPickUpItemStack(event.getEntity(), event.getItem(), event.getRemaining());
         if (cancel) {
             event.setCancelled(true);
         }

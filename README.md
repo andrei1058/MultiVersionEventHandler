@@ -4,6 +4,58 @@ One code, multi version support. If you are coding a plugin targeted for older a
 # How to use
 You can use the `support_shaded` containing support for all versions or a selected number of minecraft versions. If you are going for the second option you need to use and shade the `common` module as well in your maven.
 
+Once you've done setting your dependencies start create your first wrapped listener implementing events in a class.
+
+```java
+import com.andrei1058.spigot.multiversioneventhandler.WrappedEntityPickUpEvent;
+
+public class MyPickUpListener implements WrappedEntityPickUpEvent {
+    
+    @Override
+    public boolean onEntityPickUpItemStack(Entity entity, Item item, int remaining){
+        
+        // true if you want to cancel the event
+        return false;
+    }
+}
+```
+
+to register wrapped events we need to initialize this library first:
+
+```java
+public class MyPlugin extends JavaPlugin {
+    
+    private static MultiVersionEventHandlerManager eventManager;
+    
+    public void onEnable() {
+        eventManager = MultiVersionEventHandlerManager.init();
+        if (eventManager == null){
+            //this server version is not supported
+            Bukkit.getPluginManager().disablePlugin(this);
+        }
+    }
+}
+```
+and then we register our listener using the manager:
+```java
+public class MyPlugin extends JavaPlugin {
+
+    private static MultiVersionEventHandlerManager eventManager;
+
+    public void onEnable() {
+        eventManager = MultiVersionEventHandlerManager.init();
+        if (eventManager == null){
+            //this server version is not supported
+            Bukkit.getPluginManager().disablePlugin(this);
+            return;
+        }
+
+        // register versioned listener
+        eventManager.register(this, new MyPickUpListener(), EventPriority.NORMAL);
+    }
+}
+```
+
 # Supported versions
 - 1.8 R3
 - 1.9 R2

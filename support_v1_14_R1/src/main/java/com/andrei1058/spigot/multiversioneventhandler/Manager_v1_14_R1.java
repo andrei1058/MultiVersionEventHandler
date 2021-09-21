@@ -10,8 +10,8 @@ public class Manager_v1_14_R1 implements MultiVersionEventHandlerManager {
 
     @Override
     public void register(Plugin plugin, WrappedEvent wrappedEvent, EventPriority priority) {
-        if (wrappedEvent instanceof WrappedPickUpEvent) {
-            Bukkit.getPluginManager().registerEvents(new EntityPickUp_1_12n_Above((WrappedPickUpEvent) wrappedEvent, priority, plugin), plugin);
+        if (wrappedEvent instanceof WrappedEntityPickUpEvent) {
+            Bukkit.getPluginManager().registerEvents(new EntityPickUp_1_12n_Above((WrappedEntityPickUpEvent) wrappedEvent, priority, plugin), plugin);
         }
     }
 }
