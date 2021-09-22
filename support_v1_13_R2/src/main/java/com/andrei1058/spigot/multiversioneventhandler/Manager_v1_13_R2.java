@@ -1,6 +1,5 @@
 package com.andrei1058.spigot.multiversioneventhandler;
 
-import com.andrei1058.multiversioneventhandler.EntityPickUp_1_12n_Above;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventPriority;
 import org.bukkit.plugin.Plugin;

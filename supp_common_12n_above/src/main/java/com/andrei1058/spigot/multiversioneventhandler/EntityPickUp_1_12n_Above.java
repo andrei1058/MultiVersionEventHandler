@@ -1,6 +1,5 @@
-package com.andrei1058.multiversioneventhandler;
+package com.andrei1058.spigot.multiversioneventhandler;
 
-import com.andrei1058.spigot.multiversioneventhandler.WrappedEntityPickUpEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
