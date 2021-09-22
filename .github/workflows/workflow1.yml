@@ -18,4 +18,5 @@ jobs:
       - name: 'Store Artifacts'
         uses: actions/upload-artifact@v2
         with:
+          name: Shaded MultiVersionEventHandler
           path: support_shaded/target/*.jar
