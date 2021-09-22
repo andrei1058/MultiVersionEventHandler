@@ -14,29 +14,35 @@ public interface MultiVersionEventHandlerManager {
      *
      * @param plugin       your plugin instance.
      * @param wrappedEvent events from this library.
-     *
      */
     void register(Plugin plugin, WrappedEvent wrappedEvent, EventPriority priority);
 
     /**
-     * Initialize multi version library.
-     *
-     * @return manager instance or null if your server version is not supported.
+     * Initialize.
      */
-    default MultiVersionEventHandlerManager init() {
-        String version = Bukkit.getServer().getClass().getName().split("\\.")[3];
-        Class<?> c;
-        try {
-            c = Class.forName("com.andrei1058.spigot.multiversioneventhandler.Manager_" + version);
-        } catch (ClassNotFoundException e) {
-            //I can't run on your version
-            return null;
-        }
-        try {
-            Constructor<?> constructor = c.getConstructor();
-            return (MultiVersionEventHandlerManager) constructor.newInstance();
-        } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
-            return null;
+    @SuppressWarnings("unused")
+    class SupportBuilder {
+
+        /**
+         * Initialize multi version library.
+         *
+         * @return manager instance or null if your server version is not supported.
+         */
+        public MultiVersionEventHandlerManager init() {
+            String version = Bukkit.getServer().getClass().getName().split("\\.")[3];
+            Class<?> c;
+            try {
+                c = Class.forName("com.andrei1058.spigot.multiversioneventhandler.Manager_" + version);
+            } catch (ClassNotFoundException e) {
+                //I can't run on your version
+                return null;
+            }
+            try {
+                Constructor<?> constructor = c.getConstructor();
+                return (MultiVersionEventHandlerManager) constructor.newInstance();
+            } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
+                return null;
+            }
         }
     }
 }

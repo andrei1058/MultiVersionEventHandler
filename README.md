@@ -28,7 +28,7 @@ public class MyPlugin extends JavaPlugin {
     private static MultiVersionEventHandlerManager eventManager;
     
     public void onEnable() {
-        eventManager = MultiVersionEventHandlerManager.init();
+        eventManager = MultiVersionEventHandlerManager.SupportBuilder.init();
         if (eventManager == null){
             //this server version is not supported
             Bukkit.getPluginManager().disablePlugin(this);
