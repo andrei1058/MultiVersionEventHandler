@@ -67,3 +67,20 @@ public class MyPlugin extends JavaPlugin {
 - 1.15 R1
 - 1.16 R3
 - 1.17 R1
+
+# Maven
+```xml
+<repository>
+    <id>codeMC</id>
+    <url>https://repo.codemc.io/repository/maven-public/</url>
+</repository>
+```
+```xml
+<dependency>
+    <dependency>
+        <groupId>com.andrei1058.spigot.multiversioneventhandler</groupId>
+        <artifactId>support_shaded</artifactId>
+        <version>1.0</version>
+    </dependency>
+</dependency>
+```
