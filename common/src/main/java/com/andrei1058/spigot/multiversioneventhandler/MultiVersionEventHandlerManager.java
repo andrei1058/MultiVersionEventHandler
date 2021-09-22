@@ -28,7 +28,7 @@ public interface MultiVersionEventHandlerManager {
          *
          * @return manager instance or null if your server version is not supported.
          */
-        public MultiVersionEventHandlerManager init() {
+        public static MultiVersionEventHandlerManager init() {
             String version = Bukkit.getServer().getClass().getName().split("\\.")[3];
             Class<?> c;
             try {
