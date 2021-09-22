@@ -87,7 +87,7 @@ public class EntityPickUp_1_12n_Above implements Listener {
     }
 
     private void handleEvent(@NotNull EntityPickupItemEvent event) {
-        boolean cancel = EntityPickUp_1_12n_Above.this.wrappedEntityPickUpEvent.onEntityPickUpItemStack(event.getEntity(), event.getItem(), event.getRemaining());
+        boolean cancel = EntityPickUp_1_12n_Above.this.wrappedEntityPickUpEvent.onEntityPickUpItemStack(event.getEntity(), event.getItem(), event.getRemaining(), event.isCancelled());
         if (cancel) {
             event.setCancelled(true);
         }

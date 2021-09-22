@@ -5,6 +5,8 @@ import org.bukkit.entity.Item;
 
 public interface WrappedEntityPickUpEvent extends WrappedEvent {
 
-    /** @return return true if you want to cancel the event. */
-    boolean onEntityPickUpItemStack(Entity entity, Item item, int remaining);
+    /**
+     * @return return true if you want to cancel the event.
+     */
+    boolean onEntityPickUpItemStack(Entity entity, Item item, int remaining, boolean cancelled);
 }
