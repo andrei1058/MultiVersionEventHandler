@@ -4,7 +4,7 @@ One code, multi version support. If you are coding a plugin targeted for older a
 # How to use
 You can use the `support_shaded` containing support for all versions or a selected number of minecraft versions. If you are going for the second option you need to use and shade the `common` module as well in your maven.
 
-Once you've done setting your dependencies start create your first wrapped listener implementing events in a class.
+Once you've done setting your dependencies start creating your first wrapped listener implementing events in a class.
 
 ```java
 import com.andrei1058.spigot.multiversioneventhandler.WrappedEntityPickUpEvent;
