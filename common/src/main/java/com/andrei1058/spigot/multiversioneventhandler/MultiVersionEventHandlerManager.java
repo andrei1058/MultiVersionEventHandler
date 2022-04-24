@@ -38,7 +38,7 @@ public interface MultiVersionEventHandlerManager {
                 return null;
             }
             try {
-                Constructor<?> constructor = c.getConstructor();
+                Constructor<?> constructor = c.getDeclaredConstructor();
                 return (MultiVersionEventHandlerManager) constructor.newInstance();
             } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
                 return null;

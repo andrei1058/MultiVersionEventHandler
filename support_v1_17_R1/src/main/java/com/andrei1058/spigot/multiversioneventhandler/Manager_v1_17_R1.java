@@ -7,6 +7,9 @@ import org.bukkit.plugin.Plugin;
 @SuppressWarnings("unused")
 public class Manager_v1_17_R1 implements MultiVersionEventHandlerManager {
 
+    public Manager_v1_17_R1() {
+    }
+
     @Override
     public void register(Plugin plugin, WrappedEvent wrappedEvent, EventPriority priority) {
         if (wrappedEvent instanceof WrappedEntityPickUpEvent) {
