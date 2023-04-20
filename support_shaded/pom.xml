@@ -72,6 +72,11 @@
             <artifactId>support_v1_17_R1</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.andrei1058.spigot.multiversioneventhandler</groupId>
+            <artifactId>support_v1_19_R3</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
