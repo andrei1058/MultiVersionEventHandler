@@ -67,6 +67,7 @@ public class MyPlugin extends JavaPlugin {
 - 1.15 R1
 - 1.16 R3
 - 1.17 R1
+- 1.21.4 (you need to instantiate it manually)
 
 # Maven
 ```xml
