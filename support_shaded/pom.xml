@@ -79,7 +79,7 @@
         </dependency>
         <dependency>
             <groupId>com.andrei1058.spigot.multiversioneventhandler</groupId>
-            <artifactId>support_v1_21_4</artifactId>
+            <artifactId>support_v1_21_R3</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

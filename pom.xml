@@ -23,7 +23,7 @@
         <module>support_v1_16_R3</module>
         <module>support_v1_17_R1</module>
         <module>support_v1_19_R3</module>
-        <module>support_v1_21_4</module>
+        <module>support_v1_21_R3</module>
     </modules>
 
     <repositories>
